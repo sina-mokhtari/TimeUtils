@@ -1,6 +1,3 @@
-
-//#define TIME_UTILS_TEST_ENABLED
-
 #include "timeUtils.h"
 
 #ifdef TIME_UTILS_TEST_ENABLED

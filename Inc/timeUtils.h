@@ -7,6 +7,8 @@ extern "C"{
 
 #include "main.h"
 
+//#define TIME_UTILS_TEST_ENABLED
+
 typedef enum {
     TIME_UTILS_OK = 0x00U,
     TIME_UTILS_ERROR = 0x01U
@@ -27,6 +29,10 @@ void timeUtils_delayMillis(uint32_t delay);
 uint32_t timeUtils_deltaTime16(uint32_t now, uint32_t before);
 
 uint32_t timeUtils_deltaTime32(uint32_t now, uint32_t before);
+
+#ifdef TIME_UTILS_TEST_ENABLED
+void timeUtils_test(void);
+#endif
 
 #ifdef __cplusplus
 }
