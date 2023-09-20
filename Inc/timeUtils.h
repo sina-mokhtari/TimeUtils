@@ -14,11 +14,11 @@ typedef enum {
     TIME_UTILS_ERROR = 0x01U
 } timeUtils_StatusTypeDef;
 
-timeUtils_StatusTypeDef timeUtils_Init(TIM_HandleTypeDef *timer);
+timeUtils_StatusTypeDef timeUtils_init(TIM_HandleTypeDef *timer);
 
 TIM_TypeDef *timeUtils_getTimerInstance(void);
 
-void timeUtils_IncISR(void);
+void timeUtils_ISR(void);
 
 volatile uint32_t timeUtils_getMicros(void);
 
@@ -31,7 +31,9 @@ uint32_t timeUtils_deltaTime16(uint32_t now, uint32_t before);
 uint32_t timeUtils_deltaTime32(uint32_t now, uint32_t before);
 
 #ifdef TIME_UTILS_TEST_ENABLED
-void timeUtils_test(void);
+
+void timeUtils_test(TIM_HandleTypeDef *test_timer, UART_HandleTypeDef  *test_uart);
+
 #endif
 
 #ifdef __cplusplus
